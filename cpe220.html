@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ykzir Network Access</title>
+  <link rel="icon" href="file:///C:/icons/ykzir_logo_2025.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Ubuntu Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #330030;
+      font-family: 'Ubuntu', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #fdfdfd;
+    }
+
+    .card {
+      background-color: #4e0041;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card h1 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #ffcb6b;
+      white-space: nowrap;
+      overflow: auto;
+    }
+
+    .card p.arabic {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff0000;
+      margin-bottom: 20px;
+    }
+
+    .card p.javanese {
+      font-size: 22px;
+      font-weight: bold;
+      color: #16c582;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #000000;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      background-color: #9e7900;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 30px 20px;
+      }
+
+      .card h1 {
+        font-size: 1.8rem;
+        white-space: normal;
+      }
+
+      .btn {
+        font-size: 15px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>ꦘꦫꦶꦁꦔꦤ꧀ꦩꦗꦦꦲꦶꦡ꧀</h1>
+
+    <p class="arabic">"لا تشرب الماء إلا من مصدره الموثوق"</p>
+
+    <p class="javanese">ꦆꦟ꧀ꦠꦼꦂꦤꦺꦠꦤ꧀ꦓꦿꦠꦶꦱ꧀ꦱꦼꦭꦮꦱꦺ꧉ꦠꦤ꧀ꦥꦺꦴꦮꦠꦺꦱ꧀꧉</p>
+
+    <div class="btn-group">
+      <a class="btn" href="http://192.168.1.1/" target="_blank">ꦥꦶꦭꦶꦃꦥꦼꦁꦔꦠꦸꦫꦤ꧀ : Ykzir Фиберхоме</a>
+      <a class="btn" href="http://192.168.0.254/" target="_blank">ꦥꦶꦭꦶꦃꦥꦼꦁꦔꦠꦸꦫꦤ꧀ : Ykzir ЦПЕ220</a>
+      <a class="btn" href="http://192.168.0.101/" target="_blank">ꦥꦶꦭꦶꦃꦥꦼꦁꦔꦠꦸꦫꦤ꧀ : Ykzir ТЛЊР840Н</a>
+    </div>
+  </div>
+</body>
+</html>
