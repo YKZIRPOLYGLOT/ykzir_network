@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+  box-shadow: 0 12px 20px 0 rgba(0,0,0,0.3); /* Add box-shadow to columns */
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0); /* Add box-shadow to headers */
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0); /* Add box-shadow to list items */
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+
+/* New styles for fish pricing */
+.fish-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+  position: relative;
+}
+
+/* Oval label for "Best Selling" */
+.best-selling-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #F47920; /* Orange color for the label */
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+/* Styles for enlarged image */
+.enlarge-image-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.enlarge-image {
+  max-width: 90%;
+  max-height: 90%;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+@keyframes lightning {
+  0% {
+    color: rgb(255, 0, 0); /* Red */
+  }
+  25% {
+    color: rgb(0, 255, 0); /* Green */
+  }
+  50% {
+    color: rgb(0, 0, 255); /* Blue */
+  }
+  75% {
+    color: rgb(255, 255, 0); /* Yellow */
+  }
+  100% {
+    color: rgb(255, 0, 255); /* Magenta */
+  }
+}
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center; margin-bottom: 0; box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.039);">Fish Price List <u><span style="font-size: 14px; animation: lightning 1s infinite;">up to: Sep 27, 2023</span></u></h2>
+
+<h1 style="text-align:center; box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.065);">PT Tishalia Impex</h1>
+<p style="text-align:center; box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.06);">Browse our selection of fresh fish and their prices.</p><br>
+
+<!-- Enlarge image container -->
+<div class="enlarge-image-container" id="enlargeImageContainer">
+  <img src="" alt="Enlarged Fish" class="enlarge-image" id="enlargeImage">
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Kakap Merah</li>
+    <li class="grey" style="color: #0fbbfa;">Rp 71,000 /kg (FOB-SBY) </li>
+    <li class="grey" style="color: #007bff;">Rp - /kg (CFR-NYC) </li>
+    <img src="gmbr/red.jpg" alt="Kakap Merah" class="fish-image" onclick="enlargeImage('gmbr/red.jpg')">
+    <li>size/kg 500 gram - 1,000 gram</li>
+    <li>Frozen</li>
+    <li>Packing : Foam Box</li>
+    <li>Indonesian Sea Origin</li>
+    <li class="grey"><a href="#" class="button" onclick="orderFish('Kakap Merah')">Buy Now</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#00d2b6">Kerapu Tutul</li>
+    <li class="grey" style="color: #0fbbfa;">Rp 66,000 /kg (FOB-SBY) </li>
+    <li class="grey" style="color: #007bff;">Rp - /kg (CFR-NYC) </li>
+    <img src="gmbr/grey.jpg" alt="Kerapu Tutul" class="fish-image" onclick="enlargeImage('gmbr/grey.jpg')">
+    <li>size/kg 500 gram - 1,000 gram</li>
+    <li>Frozen</li>
+    <li>Packing : Foam Box</li>
+    <li>High-quality Grouper grade</li>
+    <li class="grey"><a href="#" class="button" onclick="orderFish('the Grey Kerapu Tutul')">Buy Now</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#0486aa">Kakap putih</li>
+    <li class="grey" style="color: #0fbbfa;">Rp 56,000 /kg (FOB-SBY) </li>
+    <li class="grey" style="color: #007bff;">Rp 999 /kg (CFR-NYC) </li>
+    <img src="gmbr/kakapputih.jpg" alt="Kakap putih" class="fish-image" onclick="enlargeImage('gmbr/kakapputih.jpg')">
+    <li>size/kg 500 gram - 1,000 gram</li>
+    <li>Frozen</li>
+    <li>Packing : Foam Box</li>
+    <li>Sustainably sourced</li>
+    <li class="grey"><a href="#" class="button" onclick="orderFish('Kakap putih Fish')">Buy Now</a></li>
+
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#04aa2b">Tuna</li>
+    <li class="grey" style="color: #0699cf;">Rp - /kg (FOB-SBY) </li>
+    <li class="grey" style="color: #dd00ff;">Rp - /kg (CFR-NYC) </li>
+    <img src="gmbr/tuna.jpg" alt="Tuna" class="fish-image" onclick="enlargeImage('gmbr/tuna.jpg')">
+    <li> - </li>
+    <li>please wait</li>
+    <li>data is being updated</li>
+    <li> - </li>
+    <li class="grey"><a href="#" class="button" onclick="orderFish('Tuna Fish')">Buy Now</a></li>
+
+  </ul>
+</div>
+
+<script>
+// Function to enlarge the image
+function enlargeImage(imageSrc) {
+  const enlargeImageContainer = document.getElementById("enlargeImageContainer");
+  const enlargeImage = document.getElementById("enlargeImage");
+
+  enlargeImage.src = imageSrc;
+  enlargeImageContainer.style.display = "flex"; // Display the enlarged image container
+  document.body.style.overflow = "hidden"; // Hide scrollbars
+}
+
+// Close the enlarged image when clicked
+document.getElementById("enlargeImageContainer").addEventListener("click", function () {
+  this.style.display = "none"; // Hide the enlarged image container
+  document.body.style.overflow = "auto"; // Restore scrollbars
+});
+
+function orderFish(fishName) {
+  // WhatsApp number and message
+  const whatsappNumber = '6289653759862';
+  const message = `Hello dear PT Tishalia Impex, we would like to order "${fishName}" with this specification:\n\nsize :\nquantity :\nencoterm :\npayment term :`;
+
+  // Create the WhatsApp link
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  // Open WhatsApp in a new window or tab
+  window.open(whatsappLink);
+}
+
+</script>
+
+</body>
+</html>
